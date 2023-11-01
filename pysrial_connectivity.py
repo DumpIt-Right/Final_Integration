@@ -1,34 +1,33 @@
 import serial.tools.list_ports 
-import silence_tensorflow.auto 
-import local_img_classifier as lic
 import serial
-import time
 
-# Connect to the serial port
-ports = list(serial.tools.list_ports.comports())
+def PortInit(port, baudrate):
+    return serial.Serial(port, baudrate)
 
-port = None
-for p in ports: 
-    port = str(p).split(' ')[0]
+def Portlist():
+    ports = list(serial.tools.list_ports.comports())
+    port = None
+    for p in ports: 
+        print(str(p).split(' ')[0])
 
+def inputSerial(port, baudrate, data):
+    ser = serial.Serial(port, baudrate)
+    ser.write(data.encode())
+    print(data)
 
-#time.sleep(0)
+if __name__ == '__main__':
+    Portlist()
+    # port = input('Enter port = ')
+    # baudrate = input('Enter baudrate = ')
+    # ser = PortInit('COM4', '115200')
+    # inputSerial('COM4', 115200, '1')  
 
-user = serial.Serial(port,"115200") 
-
-output = lic.get_value()
-
-match output:
-    case "cardboard":
-        user.write("1".encode())
-    case "glass":
-        user.write("2".encode())
-    case "metal":
-        user.write("3".encode())
-    case "paper":
-        user.write("4".encode())
-    case "plastic":
-        user.write("5".encode())
-
-
-#time.sleep(0)
+    ser = serial.Serial('COM4', '115200')
+    while True:
+        data = input('Enter a number between 1 to 5 = ')
+        if data == 'q':
+            exit(0)
+        print(data.encode())
+        ser.write(data.encode())
+        print(ser.readline())
+        # print(data)
