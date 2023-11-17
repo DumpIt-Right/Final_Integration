@@ -10,9 +10,8 @@ def main():
     
     score, classNum, className = lic.classification(model, imgName)
 
-    print(classNum, className)
-
-    # pc.inputSerial('COM4', 115200, input())
+    # print(classNum, className)
+    pc.inputSerial('COM4', 115200, input())
 
 if __name__ == '__main__':
     f = Figlet()

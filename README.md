@@ -1,2 +1,2 @@
 # Final_Integration
-Our final model: https://youtu.be/NXN0S3DPflc
+[![Video Thumbnail](https://img.youtube.com/vi/NXN0S3DPflc/0.jpg)](hhttps://www.youtube.com/watch?v=NXN0S3DPflc)
