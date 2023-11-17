@@ -1,2 +1,2 @@
 # Final_Integration
-[![Video Thumbnail](https://img.youtube.com/vi/NXN0S3DPflc/0.jpg)](hhttps://www.youtube.com/watch?v=NXN0S3DPflc)
+[![Dump It Demo Video](https://img.youtube.com/vi/NXN0S3DPflc/maxresdefault.jpg)](https://youtu.be/NXN0S3DPflc)
