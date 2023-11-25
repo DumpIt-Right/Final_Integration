@@ -1,0 +1,48 @@
+#!/usr/bin/python3
+
+from pynput.keyboard import Key, Controller
+import time
+
+import pyserial
+import pysrial_connectivity as pc
+import local_img_classifier as lic
+import tensorflow as tf
+
+from pyfiglet import Figlet
+
+def main():
+    imgName = lic.captureImage()
+
+    model = tf.keras.models.load_model('garbage_classifier_new.h5')
+    
+    ser = Serial.serial('COM4',115200) 
+
+    score, classNum, className = lic.classification(model, imgName)
+
+    keyboard_input(classNum)
+
+    ser.write(data.encode())
+    # print(classNum, className)
+    # pc.inputSerial('COM4', 115200, input())
+
+if __name__ == '__main__':
+    f = Figlet()
+    print(f.renderText('Dump-It'))
+    main()
+
+
+
+
+def keyboard_input(arg1):
+
+    keyboard = Controller()
+
+    time.sleep(2)
+
+    keyboard.press(arg1)
+    keyboard.release(arg1)
+
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
+
+    #print(sys.argv[1])
